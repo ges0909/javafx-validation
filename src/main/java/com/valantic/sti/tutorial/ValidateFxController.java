@@ -49,15 +49,14 @@ public class ValidateFxController implements Initializable {
                 .decorates(usernameTextField) // can decorate any node or call c.warn("...")
                 .decorates(passwordTextField)
                 .immediate(); // validate immediately
-        //
         loginButton.disableProperty().bind(
                 validator.containsErrorsProperty() // 'ReadOnlyBooleanProperty' to check if there are errors
         );
-        final StringBinding problemsText = Bindings.createStringBinding(
-                this::getProblemsAsString,
+        final StringBinding validationResultsStringBinding = Bindings.createStringBinding(
+                this::getValidationResultsAsString,
                 validator.validationResultProperty() // all warnings and errors plus messages
         );
-        problemTextArea.textProperty().bind(problemsText);
+        problemTextArea.textProperty().bind(validationResultsStringBinding);
     }
 
     public void handleLogin(final ActionEvent event) {
@@ -82,7 +81,7 @@ public class ValidateFxController implements Initializable {
         }
     }
 
-    private String getProblemsAsString() {
+    private String getValidationResultsAsString() {
         return validator.validationResultProperty().get().getMessages().stream()
                 .map(msg -> msg.getSeverity().toString() + ": " + msg.getText())
                 .collect(Collectors.joining("\n"));

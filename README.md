@@ -3,12 +3,12 @@
 ## ControlsFX
 
 - [JavaFX | ControlsFX validation Framework | How to use?](https://www.youtube.com/watch?v=T-gjV-MPREg)
-- [ControlsFX](https://github.com/controlsfx/controlsfx)
+- [GitHub: ControlsFX](https://github.com/controlsfx/controlsfx)
 
 ## ValidatorFX
 
 - [ValidatorFX](https://www.youtube.com/watch?v=dSYsuPuYaZ8)
-- [ValidatorFX](https://github.com/effad/ValidatorFX)
+- [GitHub: ValidatorFX](https://github.com/effad/ValidatorFX)
 
 Why not ControlsFX?
 
